@@ -1,6 +1,7 @@
 import os
 from io import BytesIO
 import dj_database_url
+import django_heroku
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 

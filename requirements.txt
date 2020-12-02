@@ -13,6 +13,7 @@ dj-database-url==0.5.0
 dj-inmemorystorage==2.1.0
 Django==2.2.13
 django-extensions==2.2.9
+django-heroku==0.3.1
 django-jazzmin==2.2.11
 djangorestframework==3.12.2
 gunicorn==20.0.4
@@ -31,6 +32,7 @@ pexpect==4.8.0
 pickleshare==0.7.5
 progress==1.5
 prompt-toolkit==3.0.5
+psycopg2==2.8.6
 psycopg2-binary==2.8.6
 ptyprocess==0.6.0
 Pygments==2.6.1
@@ -47,3 +49,4 @@ traitlets==4.3.3
 urllib3==1.25.8
 wcwidth==0.2.4
 webencodings==0.5.1
+whitenoise==5.2.0
