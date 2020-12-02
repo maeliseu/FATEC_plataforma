@@ -7,7 +7,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = '33zwkv*=!#+2=^=)x*b1p&hf%u%7i&qax1g=&be!89!_b@ydns'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['plataforma-fatec-araras-api.herokuapp.com', '127.0.0.1']
 
@@ -33,6 +33,7 @@ AUTH_USER_MODEL = 'core.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
