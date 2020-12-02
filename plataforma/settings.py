@@ -6,9 +6,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = '33zwkv*=!#+2=^=)x*b1p&hf%u%7i&qax1g=&be!89!_b@ydns'
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'plataforma-fatec-araras-api.herokuapp.com']
+ALLOWED_HOSTS = ['plataforma-fatec-araras-api.herokuapp.com', '127.0.0.1']
 
 INSTALLED_APPS = [
     'jazzmin',
