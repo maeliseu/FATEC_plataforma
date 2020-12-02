@@ -1,13 +1,14 @@
 import os
 from io import BytesIO
+import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = '33zwkv*=!#+2=^=)x*b1p&hf%u%7i&qax1g=&be!89!_b@ydns'
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'plataforma-fatec-araras-api.herokuapp.com']
 
 INSTALLED_APPS = [
     'jazzmin',
@@ -60,10 +61,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'plataforma.wsgi.application'
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
+    'default': dj_database_url.config(default=f'sqlite:///{BASE_DIR}/db.sqlite3')
 }
 
 AUTH_PASSWORD_VALIDATORS = [
