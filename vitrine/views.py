@@ -71,8 +71,23 @@ class VitrineList(generics.ListAPIView):
     serializer_class = VitrineSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['tipo_vaga']
+    # def get_queryset(self):
+    #     vaga = self.kwargs['vaga']
+    #     queryset = VitrineModel.objects.get_alunos.filter(vaga=vaga)
+    #     return queryset
 
 class VitrineDetail(generics.RetrieveAPIView):
 
     queryset = VitrineModel.objects.get_alunos()
     serializer_class = VitrineSerializer
+
+class VitrineListVaga(generics.ListAPIView):
+
+    # queryset = VitrineModel.objects.get_alunos()
+    serializer_class = VitrineSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['tipo_vaga']
+    def get_queryset(self):
+        tipo = self.kwargs['tipo']
+        queryset = VitrineModel.objects.get_tipo_vaga(tipo)
+        return queryset
