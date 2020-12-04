@@ -9,6 +9,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
+from django_filters.rest_framework import DjangoFilterBackend
+
 
 def showcase(request):
     alunos = VitrineModel.objects.get_alunos()
@@ -67,6 +69,8 @@ class VitrineList(generics.ListAPIView):
 
     queryset = VitrineModel.objects.get_alunos()
     serializer_class = VitrineSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['tipo_vaga']
 
 class VitrineDetail(generics.RetrieveAPIView):
 

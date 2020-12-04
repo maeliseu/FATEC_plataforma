@@ -7,7 +7,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = '33zwkv*=!#+2=^=)x*b1p&hf%u%7i&qax1g=&be!89!_b@ydns'
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['plataforma-fatec-araras-api.herokuapp.com', '127.0.0.1']
 
@@ -21,12 +21,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # INSTALLED APPS
     'django_extensions',
+    'rest_framework',
+    'django_filters',
     # LOCAL APPs
     'core.apps.CoreConfig',
     'estagio.apps.EstagioConfig',
     'manutencao.apps.ManutencaoConfig',
     'vitrine.apps.VitrineConfig',
-    'rest_framework',
 ]
 
 AUTH_USER_MODEL = 'core.User'
@@ -114,5 +115,9 @@ REST_FRAMEWORK = {
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+    ],
+
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend'
+    ],
 }
