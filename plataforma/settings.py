@@ -121,5 +121,5 @@ REST_FRAMEWORK = {
         'django_filters.rest_framework.DjangoFilterBackend'
     ],
 
-    'UNICODE_JSON': False
+    # 'UNICODE_JSON': False
 }
