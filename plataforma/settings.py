@@ -1,15 +1,20 @@
 import os
 from io import BytesIO
-import dj_database_url
+
 import django_heroku
+from environs import Env
+import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = '33zwkv*=!#+2=^=)x*b1p&hf%u%7i&qax1g=&be!89!_b@ydns'
+env = Env()
+env.read_env(BASE_DIR+'/.env', recurse=False)
 
-DEBUG = True
+SECRET_KEY = env.str('SECRET_KEY')
 
-ALLOWED_HOSTS = ['plataforma-fatec-araras-api.herokuapp.com', '127.0.0.1']
+DEBUG = env.bool('DEBUG', default=False)
+
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 
 INSTALLED_APPS = [
     'jazzmin',
